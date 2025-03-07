@@ -1,3 +1,11 @@
+libapache2-mod-authnz-external (3.3.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * NEW source: https://github.com/phokz/mod-auth-external
+  * package for latest version (July 22, 2019)
+
+ -- carrvo <carrvo@gmail.com>  Thu, 06 Mar 2025 19:16:48 -0700
+
 libapache2-mod-authnz-external (3.3.2-2) unstable; urgency=medium
 
   * QA upload.
