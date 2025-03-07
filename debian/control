@@ -1,6 +1,8 @@
 Source: libapache2-mod-authnz-external
 Maintainer: Josef Liška  <josef.liska@virtualmaster.com>
 Uploaders: carrvo <carrvo@gmail.com>
+Section: httpd
+Priority: optional
 Standards-Version: 4.7.0
 Build-Depends: debhelper-compat (= 13),
     libc6 (>= 2.4),
@@ -15,8 +17,6 @@ Package: libapache2-mod-authnz-external
 Architecture: amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: pwauth
-Section: httpd
-Priority: optional
 Homepage: https://github.com/carrvo/debian-libapache2-mod-authnz-external
 Description: authenticate Apache against external authentication services
  Mod_Authnz_External can be used to quickly construct secure, reliable
