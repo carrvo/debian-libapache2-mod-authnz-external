@@ -11,6 +11,7 @@ Build-Depends: debhelper-compat (= 13),
     dh-apache2
 Recommends: pwauth
 Homepage: https://github.com/phokz/mod-auth-external
+Vcs-Git: https://github.com/phokz/mod-auth-external
 
 Package: libapache2-mod-authnz-external
 Architecture: amd64
