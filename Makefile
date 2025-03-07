@@ -22,7 +22,7 @@ clean:
 	sudo rm -rf libapache2-mod-authnz-external*
 
 debian-package-dependencies:
-	sudo apt install build-essential fakeroot devscripts apxs apache2-dev
+	sudo apt install build-essential fakeroot devscripts apxs apache2-dev dupload
 
 debian-package-version:
 	dch -v $(version)
@@ -30,3 +30,9 @@ debian-package-version:
 debian-package: libapache2-mod-authnz-external
 	cp -R debian libapache2-mod-authnz-external/
 	cd libapache2-mod-authnz-external && debuild --rootcmd=sudo --no-tgz-check -us -uc
+
+debsign:
+	debsign libapache2-mod-authnz-external_$(version)_amd64.changes
+
+dupload:
+	dupload --to debian-mentors
