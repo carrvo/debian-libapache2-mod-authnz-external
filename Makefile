@@ -13,12 +13,13 @@ version = $(error version is not set)
 download:
 	wget https://github.com/phokz/mod-auth-external/archive/mod_authnz_external-$(version).tar.gz
 	tar -xvzf mod_authnz_external-$(version).tar.gz
-	mv mod-auth-external-mod_authnz_external-$(version) libapache2-mod-authnz-external-$(version)
+	#mv mod-auth-external-mod_authnz_external-$(version) libapache2-mod-authnz-external-$(version)
+	mv mod-auth-external-mod_authnz_external-$(version) libapache2-mod-authnz-external
 
 clean:
 	rm -rf mod_authnz_external*
 	rm -rf mod_auth_external*
-	rm -rf libapache2-mod-authnz-external*
+	sudo rm -rf libapache2-mod-authnz-external*
 
 mae.tar: $(TAR)
 	tar cvf mae.tar $(TAR)
@@ -29,5 +30,6 @@ debian-package-dependencies:
 debian-package-version:
 	dch -v $(version)
 
-debian-package:
-	debuild --rootcmd=sudo --no-tgz-check -us -uc
+debian-package: libapache2-mod-authnz-external
+	cp -R debian libapache2-mod-authnz-external/
+	cd libapache2-mod-authnz-external && debuild --rootcmd=sudo --no-tgz-check -us -uc
