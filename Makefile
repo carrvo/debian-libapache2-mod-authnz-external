@@ -7,22 +7,18 @@ TAR= README INSTALL INSTALL.HARDCODE CHANGES CONTRIBUTORS AUTHENTICATORS UPGRADE
 
 version = $(error version is not set)
 
-.DEFAULT_GOAL:= build
-.PHONY: install build clean
+.DEFAULT_GOAL:= debian-package
+.PHONY: clean
 
-install: mod_authnz_external.la
-	$(APXS) -i -a mod_authnz_external.la
-
-build: mod_authnz_external.la
-
-mod_authnz_external.la: mod_authnz_external.c
-	$(APXS) -c mod_authnz_external.c
+download:
+	wget https://github.com/phokz/mod-auth-external/archive/mod_authnz_external-$(version).tar.gz
+	tar -xvzf mod_authnz_external-$(version).tar.gz
+	mv mod-auth-external-mod_authnz_external-$(version) libapache2-mod-authnz-external-$(version)
 
 clean:
-	rm -rf mod_authnz_external.so mod_authnz_external.o \
-	    mod_authnz_external.la mod_authnz_external.slo \
-	    mod_authnz_external.lo .libs
-	-ls -a .*.swp
+	rm -rf mod_authnz_external*
+	rm -rf mod_auth_external*
+	rm -rf libapache2-mod-authnz-external*
 
 mae.tar: $(TAR)
 	tar cvf mae.tar $(TAR)
