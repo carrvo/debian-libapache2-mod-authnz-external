@@ -21,9 +21,6 @@ clean:
 	rm -rf mod_auth_external*
 	sudo rm -rf libapache2-mod-authnz-external*
 
-mae.tar: $(TAR)
-	tar cvf mae.tar $(TAR)
-
 debian-package-dependencies:
 	sudo apt install build-essential fakeroot devscripts apxs apache2-dev
 
