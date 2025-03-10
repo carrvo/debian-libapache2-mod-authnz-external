@@ -6,6 +6,21 @@ libapache2-mod-authnz-external (3.3.3) unstable; urgency=medium
 
  -- carrvo <carrvo@gmail.com>  Thu, 06 Mar 2025 19:16:48 -0700
 
+libapache2-mod-authnz-external (3.3.2-3) unstable; urgency=medium
+
+  * QA upload.
+
+  * Added d/gbp.conf to describe branch layout.
+  * Updated vcs in d/control to Salsa.
+  * Updated d/gbp.conf to enforce the use of pristine-tar.
+  * Updated Standards-Version from 4.6.1 to 4.7.0.
+  * Use wrap-and-sort -at for debian control files.
+  * Trim trailing whitespace.
+  * Drop fields with obsolete URLs.
+  * Fix day-of-week for changelog entry 3.2.4-1.
+
+ -- Petter Reinholdtsen <pere@debian.org>  Sat, 30 Nov 2024 11:00:39 +0100
+
 libapache2-mod-authnz-external (3.3.2-2) unstable; urgency=medium
 
   * QA upload.
