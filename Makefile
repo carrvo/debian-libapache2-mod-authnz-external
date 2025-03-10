@@ -11,15 +11,13 @@ version = $(error version is not set)
 .PHONY: clean
 
 download:
-	wget https://github.com/phokz/mod-auth-external/archive/mod_authnz_external-$(version).tar.gz
-	tar -xvzf mod_authnz_external-$(version).tar.gz
-	#mv mod-auth-external-mod_authnz_external-$(version) libapache2-mod-authnz-external-$(version)
-	mv mod-auth-external-mod_authnz_external-$(version) libapache2-mod-authnz-external
+	mkdir quilt
+	mkdir quilt/mod_authnz_external
+	cp -R debian quilt/mod_authnz_external/
+	cd quilt/mod_authnz_external && uscan
 
 clean:
-	rm -rf mod_authnz_external*
-	rm -rf mod_auth_external*
-	sudo rm -rf libapache2-mod-authnz-external*
+	sudo rm -rf quilt
 
 debian-package-dependencies:
 	sudo apt install build-essential fakeroot devscripts apxs apache2-dev dupload
@@ -27,12 +25,14 @@ debian-package-dependencies:
 debian-package-version:
 	dch -v $(version)
 
-debian-package: libapache2-mod-authnz-external
-	cp -R debian libapache2-mod-authnz-external/
-	cd libapache2-mod-authnz-external && debuild --rootcmd=sudo --no-tgz-check -us -uc
+debian-package: quilt/mod_authnz_external
+	cp -R debian quilt/mod_authnz_external/
+	cd quilt && tar -xvzf mod_authnz_externallibapache2-mod-authnz-external-$(version).tar.xz
+	cp -R quilt/phokz-mod-auth-external-*/* quilt/mod_authnz_external/
+	cd quilt/mod_authnz_external && debuild --rootcmd=sudo -us -uc
 
 debsign:
-	debsign libapache2-mod-authnz-external_$(version)_amd64.changes
+	cd quilt && debsign libapache2-mod-authnz-external_$(version)_amd64.changes
 
 dupload:
-	dupload --to debian-mentors
+	cd quilt && dupload --to debian-mentors

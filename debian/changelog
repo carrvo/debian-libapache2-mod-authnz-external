@@ -1,4 +1,4 @@
-libapache2-mod-authnz-external (3.3.3) unstable; urgency=medium
+libapache2-mod-authnz-external (3.3.3-1) unstable; urgency=medium
 
   * Non-maintainer upload.
   * NEW source: https://github.com/phokz/mod-auth-external
