@@ -11,8 +11,8 @@ version = $(error version is not set)
 .PHONY: clean
 
 download:
-	mkdir quilt
-	mkdir quilt/mod_authnz_external
+	mkdir quilt || true
+	mkdir quilt/mod_authnz_external || true
 	cp -R debian quilt/mod_authnz_external/
 	cd quilt/mod_authnz_external && uscan
 
