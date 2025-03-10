@@ -29,7 +29,7 @@ debian-package-version:
 
 debian-package: libapache2-mod-authnz-external
 	cp -R debian libapache2-mod-authnz-external/
-	cd libapache2-mod-authnz-external && debuild --rootcmd=sudo --no-tgz-check -us -uc
+	cd libapache2-mod-authnz-external && debuild --no-tgz-check -us -uc
 
 debsign:
 	debsign libapache2-mod-authnz-external_$(version)_amd64.changes

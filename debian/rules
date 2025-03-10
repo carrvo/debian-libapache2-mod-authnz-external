@@ -1,3 +1,10 @@
 #!/usr/bin/make -f
+
+override_dh_auto_build:
+	apxs2 -c -Wc,-fno-strict-aliasing -Wc,-ffile-prefix-map=$(CURDIR)=. mod_authnz_external.c
+
+override_dh_auto_install:
+	# handled by dh_install
+
 %:
 	dh $@ --with apache2
