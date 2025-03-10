@@ -3,7 +3,7 @@ Maintainer: Josef Liška  <josef.liska@virtualmaster.com>
 Uploaders: carrvo <carrvo@gmail.com>
 Section: httpd
 Priority: optional
-Standards-Version: 4.7.0
+Standards-Version: 4.6.2
 Build-Depends: debhelper-compat (= 13),
     libc6 (>= 2.4),
     apache2-api-20120211,
