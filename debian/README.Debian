@@ -7,11 +7,6 @@ INSTALL
 UPGRADE
 https://github.com/phokz/mod-auth-external
 
-Older links:
-http://blog.innerewut.de/2007/6/26/apache-2-2-authentication-with-mod_authnz_external
-http://www.unixpapa.com/mod_auth_external
-http://code.google.com/p/mod-auth-external
-
 ## Compatibility with pwauth
 
 This package can be used with pwauth to provide secure auth against PAM without

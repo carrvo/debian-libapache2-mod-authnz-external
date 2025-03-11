@@ -91,7 +91,7 @@ Mod_Authnz_External can be used in either of two somewhat divergent ways:
 
     Pwauth, an external authentication program for securely authenticating
     out of a Unix shadow password database available from
-    http://www.unixpapa.com/pwauth/ .
+    https://github.com/phokz/mod-auth-external .
 
  Hardcoded Authentication:
 
@@ -105,4 +105,10 @@ Mod_Authnz_External can be used in either of two somewhat divergent ways:
 
     Example functions for authenticating out of a RADIUS server or Sybase
     database are included in this distribution.
+
+## Historical Upstreams
+
+1. https://github.com/phokz/mod-auth-external **CURRENT**
+1. http://code.google.com/p/mod-auth-external
+1. http://www.unixpapa.com/mod_auth_external (and [old blog post](http://blog.innerewut.de/2007/6/26/apache-2-2-authentication-with-mod_authnz_external))
 
