@@ -14,7 +14,7 @@ download:
 	mkdir quilt || true
 	mkdir quilt/mod_authnz_external || true
 	cp -R debian quilt/mod_authnz_external/
-	cd quilt/mod_authnz_external && uscan
+	cd quilt/mod_authnz_external && uscan --force-download
 
 clean:
 	sudo rm -rf quilt
