@@ -29,7 +29,7 @@ debian-package: quilt/mod_authnz_external
 	cp -R debian quilt/mod_authnz_external/
 	cd quilt && tar -xvzf mod_authnz_externallibapache2-mod-authnz-external-$(version).tar.xz
 	cp -R quilt/phokz-mod-auth-external-*/* quilt/mod_authnz_external/
-	cd quilt/mod_authnz_external && debuild -us -uc
+	cd quilt/mod_authnz_external && debuild -us -uc -Zxz
 
 debsign:
 	cd quilt && debsign libapache2-mod-authnz-external_$(version)_amd64.changes
