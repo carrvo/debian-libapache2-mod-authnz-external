@@ -91,7 +91,7 @@ Mod_Authnz_External can be used in either of two somewhat divergent ways:
 
     Pwauth, an external authentication program for securely authenticating
     out of a Unix shadow password database available from
-    http://www.unixpapa.com/pwauth/ .
+    https://github.com/phokz/pwauth .
 
  Hardcoded Authentication:
 
