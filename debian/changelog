@@ -1,3 +1,9 @@
+libapache2-mod-authnz-external (3.3.3-2) UNRELEASED; urgency=medium
+
+  * https://github.com/phokz/mod-auth-external/pull/67
+
+ -- carrvo <carrvo@gmail.com>  Tue, 26 Aug 2025 14:21:16 -0600
+
 libapache2-mod-authnz-external (3.3.3-1) unstable; urgency=medium
 
   * Non-maintainer upload.

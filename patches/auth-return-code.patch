@@ -1,0 +1,15 @@
+ensure no user is 401
+Index: mod-auth-external/quilt/mod_authnz_external/mod_authnz_external.c
+===================================================================
+--- mod-auth-external.orig/quilt/mod_authnz_external/mod_authnz_external.c
++++ mod-auth-external/quilt/mod_authnz_external/mod_authnz_external.c
+@@ -695,6 +695,9 @@ static authz_status externalgroup_check_
+ 	"User not in Required group. Last result code: %i",
+     	r->user, r->uri, code);
+ 
++    // Revisit whether there was an authenticated user so that we can flag Apache appropriately
++    if (r->user == "") return AUTHZ_DENIED_NO_USER;
++
+     return AUTHZ_DENIED;
+ }
+ 

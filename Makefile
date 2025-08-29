@@ -29,6 +29,8 @@ debian-package: quilt/mod_authnz_external
 	cp -R debian quilt/mod_authnz_external/
 	cd quilt && tar -xvzf mod_authnz_externallibapache2-mod-authnz-external-$(version).tar.xz
 	cp -R quilt/phokz-mod-auth-external-*/* quilt/mod_authnz_external/
+	cp -R patches quilt/mod_authnz_external/debian/
+	$(foreach file, $(wildcard quilt/mod_authnz_external/debian/patches/*.patch), sed -i 's/\/quilt\/mod_authnz_external//' $(file))
 	cd quilt/mod_authnz_external && debuild -us -uc -Zxz
 
 debsign:
